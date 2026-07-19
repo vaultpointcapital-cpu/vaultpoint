@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Vault Glow: signature radial violet bloom -->
+    <radialGradient id="vaultGlow" cx="0.5" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#6C63FF" stop-opacity="0.38"/>
+      <stop offset="0.55" stop-color="#6C63FF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#6C63FF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Emerald bloom behind the Point -->
+    <radialGradient id="pointGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00E5A0" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#00E5A0" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Subtle depth on the tile -->
+    <linearGradient id="tileFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111318"/>
+      <stop offset="1" stop-color="#0A0C10"/>
+    </linearGradient>
+    <!-- Violet ramp along the V -->
+    <linearGradient id="vStroke" x1="310" y1="336" x2="478" y2="714" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8A83FF"/>
+      <stop offset="1" stop-color="#6C63FF"/>
+    </linearGradient>
+    <clipPath id="tileClip">
+      <rect x="0" y="0" width="1024" height="1024" rx="232"/>
+    </clipPath>
+  </defs>
+ 
+  <!-- Tile -->
+  <rect x="0" y="0" width="1024" height="1024" rx="232" fill="url(#tileFill)"/>
+  <g clip-path="url(#tileClip)">
+    <rect x="0" y="0" width="1024" height="1024" fill="url(#vaultGlow)"/>
+  </g>
+  <rect x="3" y="3" width="1018" height="1018" rx="229" fill="none" stroke="#1E2330" stroke-width="6"/>
+ 
+  <!-- Resistance line the mark breaks through -->
+  <line x1="288" y1="396" x2="752" y2="396" stroke="#4A5168" stroke-width="10"
+        stroke-linecap="round" stroke-dasharray="4 34" opacity="0.55"/>
+ 
+  <!-- The V: left stroke down, right stroke breaking out -->
+  <polyline points="310,396 478,714 688,336" fill="none" stroke="url(#vStroke)"
+            stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+ 
+  <!-- The Point -->
+  <circle cx="726" cy="268" r="120" fill="url(#pointGlow)"/>
+  <circle cx="726" cy="268" r="40" fill="#00E5A0"/>
+</svg>
